@@ -7,8 +7,10 @@ def selection_sort(arr):
         for j in range(i + 1, n):
             if arr[j] < arr[min_index]:
                 min_index = j
-        # swap the found smallest with the first element of unsorted part
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+        # swap only if needed
+        if i != min_index:
+            # swap the found smallest with the first element of unsorted part
+            arr[i], arr[min_index] = arr[min_index], arr[i]
     return arr
 
 
